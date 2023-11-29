@@ -3,17 +3,32 @@ import PropTypes from 'prop-types';
 import TableCell from './TableCell';
 import Stack from './Stack';
 
-const TableRow = ({ city, variant }) => {
+const TableRow = ({ city, variant, isLastRow }) => {
   const { name, area, population } = city;
-  // TODO: mapper for colors -> const color = variant;
   const shouldBeHighlighted = population > 1000000;
-  // TODO: alternating row color based on index
+  const isOddCellNumber = variant % 2 === 0;
 
   return (
     <Stack direction="row" width="100%">
-      <TableCell content={name || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
-      <TableCell content={area || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
-      <TableCell content={population || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
+      <TableCell
+        content={name || 'N/A'}
+        isOddCellNumber={isOddCellNumber}
+        shouldBeHighlighted={shouldBeHighlighted}
+        isLastRow={isLastRow}
+      />
+      <TableCell
+        content={area || 'N/A'}
+        isOddCellNumber={isOddCellNumber}
+        shouldBeHighlighted={shouldBeHighlighted}
+        isLastRow={isLastRow}
+      />
+      <TableCell
+        content={population || 'N/A'}
+        isOddCellNumber={isOddCellNumber}
+        shouldBeHighlighted={shouldBeHighlighted}
+        isLastRow={isLastRow}
+        isLastInRow
+      />
     </Stack>
   );
 };
@@ -23,4 +38,5 @@ export default TableRow;
 TableRow.propTypes = {
   city: PropTypes.object,
   variant: PropTypes.number,
+  isLastRow: PropTypes.bool,
 };

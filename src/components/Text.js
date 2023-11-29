@@ -72,7 +72,7 @@ Text.propTypes = {
   component: PropTypes.oneOf(['div', 'span', 'p']),
   weight: PropTypes.oneOf([400, 500, 700, 900]),
   id: PropTypes.string,
-  color: PropTypes.oneOf(['textSecondary', 'textMain']),
+  color: PropTypes.oneOf(['textSecondary', 'textMain', 'textTertiary']),
   textAlign: PropTypes.oneOf(['start', 'end', 'center']),
   onHoverColor: PropTypes.oneOf(['textMain', 'textSecondary']),
   isOverflowingEllipsis: PropTypes.bool,

@@ -6,7 +6,7 @@ const TableHeader = () => {
     <Stack direction="row" width="100%">
       <TableCell content="Name" isForHeader />
       <TableCell content="Area (in sq.m.)" isForHeader />
-      <TableCell content="Population" isForHeader />
+      <TableCell content="Population" isForHeader isLastInRow />
     </Stack>
   );
 };

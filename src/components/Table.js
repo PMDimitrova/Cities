@@ -7,7 +7,7 @@ const Table = () => {
     <>
       <TableHeader />
       {cities.map((city, i) => (
-        <TableRow city={city} variant={i} key={city.name} />
+        <TableRow city={city} variant={i} key={city.name} isLastRow={i + 1 === cities.length} />
       ))}
     </>
   );

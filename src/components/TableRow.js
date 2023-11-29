@@ -1,18 +1,20 @@
 import PropTypes from 'prop-types';
 
+import TableCell from './TableCell';
+import Stack from './Stack';
+
 const TableRow = ({ city, variant }) => {
-  const color = variant; // TODO: mapper for colors
-  const shouldHighlightRow = false; // TODO: highlighted if population > 1mil
+  const { name, area, population } = city;
+  // TODO: mapper for colors -> const color = variant;
+  const shouldBeHighlighted = population > 1000000;
   // TODO: alternating row color based on index
 
   return (
-    <>
-      {color}
-      {shouldHighlightRow && <> HIGHLIGHT row</>}
-      <div>name : {city.name}</div>
-      <div>area : {city.area}</div>
-      <div>population : {city.population}</div>
-    </>
+    <Stack direction="row" width="100%">
+      <TableCell content={name || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
+      <TableCell content={area || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
+      <TableCell content={population || 'N/A'} shouldBeHighlighted={shouldBeHighlighted} />
+    </Stack>
   );
 };
 

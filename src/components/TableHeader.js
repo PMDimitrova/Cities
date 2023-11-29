@@ -1,5 +1,14 @@
+import TableCell from './TableCell';
+import Stack from './Stack';
+
 const TableHeader = () => {
-  return <div>Table Header</div>;
+  return (
+    <Stack direction="row" width="100%">
+      <TableCell content="Name" isForHeader />
+      <TableCell content="Area (in sq.m.)" isForHeader />
+      <TableCell content="Population" isForHeader />
+    </Stack>
+  );
 };
 
 export default TableHeader;
